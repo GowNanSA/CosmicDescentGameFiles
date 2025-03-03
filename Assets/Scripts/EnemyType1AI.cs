@@ -1,4 +1,6 @@
 using UnityEngine;
+// enemy type 1 
+
 
 public class EnemyType1AI : MonoBehaviour
 {
