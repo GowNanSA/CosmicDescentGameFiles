@@ -48,18 +48,46 @@ public class EnemyType1AI : MonoBehaviour
 
         if (!playerSeen && !playerAttack) Patrol();
         if (!playerSeen && !playerAttack) Chase();
-        if (playerSeen && playerAttack) Attack();
+        //if (playerSeen && playerAttack) Attack();
     }
 
 
 
     // patrol 
-    void Patrol() {
-      
+    void Patrol()
+    {
+        if (!walkPointSet) SearchWalkPoint();
+
+        if (walkPointSet)
+            agent.SetDestination(walkPoint);
+
+        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+
+        if (distanceToWalkPoint.magnitude < 1f)
+            walkPointSet = false;
+    }
+
+    void SearchWalkPoint()
+    {
+        float randomRangeZ = Random.Range(-walkPointRange, walkPointRange);
+        float randomRangeX = Random.Range(-walkPointRange, walkPointRange);
+
+        walkPoint = new Vector3(transform.position.x + randomRangeX, transform.position.y, transform.position.z + randomRangeZ);
+
+        // this is a raycast to check if this is on the ground from the tutorial I watched
+        if (Physics.Raycast(walkPoint, -transform.up, 2f, ground1))
+            walkPointSet = true;
     }
 
     // chase and attack 
-    void Chase() { 
+    void Chase()
+    {
+        agent.SetDestination(playerTarget.position);
+        // we can include the attack and other AI elements in here later on 
 
+        transform.LookAt(playerTarget);
     }
+
 }
+    // will likely kill the player, lead to game over, or restart level when touched 
+    
