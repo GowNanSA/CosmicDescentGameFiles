@@ -50,16 +50,16 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.down * 10f, ForceMode.Force);
         }
         //limit player speed to max speed
-        if (rb.velocity.magnitude > speed)
+        if (rb.linearVelocity.magnitude > speed)
         {
-            Vector3 limitVelocity = rb.velocity.normalized * speed;
-            rb.velocity = new Vector3(limitVelocity.x, rb.velocity.y, limitVelocity.z);
+            Vector3 limitVelocity = rb.linearVelocity.normalized * speed;
+            rb.linearVelocity = new Vector3(limitVelocity.x, rb.linearVelocity.y, limitVelocity.z);
         }
         //limit player speed to max speed when moving up and down
-        if (rb.velocity.y > speed)
+        if (rb.linearVelocity.y > speed)
         {
-            Vector3 limitVelocity = rb.velocity.normalized * speed;
-            rb.velocity = new Vector3(rb.velocity.x, limitVelocity.y, rb.velocity.z);
+            Vector3 limitVelocity = rb.linearVelocity.normalized * speed;
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, limitVelocity.y, rb.linearVelocity.z);
         }
 
     }

@@ -1847,8 +1847,8 @@ GameObject:
   - component: {fileID: 912371931}
   - component: {fileID: 912371934}
   - component: {fileID: 912371933}
-  - component: {fileID: 912371932}
   - component: {fileID: 912371935}
+  - component: {fileID: 912371932}
   m_Layer: 6
   m_Name: PlayerObject
   m_TagString: Untagged
@@ -1954,7 +1954,7 @@ CapsuleCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 912371930}
-  m_Material: {fileID: 13400000, guid: 7ca644a9cc0cdbc44bb3c033aab19ab9, type: 2}
+  m_Material: {fileID: 13400000, guid: 0f02b9a5f050278429b102cc3138e6b0, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1966,10 +1966,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5000001
-  m_Height: 1.9
+  m_Radius: 0.6688272
+  m_Height: 1.3376544
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0.000000059604645, y: -0.43877828, z: 0.16882694}
 --- !u!1001 &939729706
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2518,7 +2518,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-
 --- !u!1001 &1157169631
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3891,6 +3890,7 @@ GameObject:
   - component: {fileID: 1987992289}
   - component: {fileID: 1987992291}
   - component: {fileID: 1987992290}
+  - component: {fileID: 1987992293}
   - component: {fileID: 1987992292}
   m_Layer: 6
   m_Name: Player
@@ -3960,8 +3960,8 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!65 &1987992292
-BoxCollider:
+--- !u!136 &1987992292
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3978,9 +3978,34 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &1987992293
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1987992288}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2.6666327
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.8333163, z: 0}
 --- !u!4 &433936526034708683 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8786573228756150732, guid: 04b79947f0a94664ebe8032e9eb1edbd, type: 3}
@@ -4060,4 +4085,4 @@ SceneRoots:
   - {fileID: 1011184361}
   - {fileID: 1148243733}
   - {fileID: 138878597}
-
+  - {fileID: 329905446}
