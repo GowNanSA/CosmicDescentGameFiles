@@ -6,20 +6,34 @@ public class PoweredWireBehavior : MonoBehaviour
     bool mouseDown = false;
     public PoweredWireStats powerWireS;
     LineRenderer line;
+    public float offset;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         powerWireS = gameObject.GetComponent<PoweredWireStats>();
         line = gameObject.GetComponentInParent<LineRenderer>();
+
+        if(powerWireS.objectColor == WireColor.blue)
+        {
+            offset = 0.324148f;
+        }
+        else if(powerWireS.objectColor == WireColor.red)
+        {
+            offset = -2.4f;
+        }
+        else
+        {
+            offset = -5.4f;
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         MoveWire();
-        line.SetPosition(0, new Vector3(gameObject.transform.localPosition.x - 0.792598f, gameObject.transform.localPosition.y + 0.324148f, 5));
-        line.SetPosition(1, new Vector3(gameObject.transform.localPosition.x - 1f, gameObject.transform.localPosition.y + 0.324148f, 5));
+        line.SetPosition(0, new Vector3(gameObject.transform.localPosition.x - 0.792598f, gameObject.transform.localPosition.y + offset, 5));
+        line.SetPosition(1, new Vector3(gameObject.transform.localPosition.x - 1f, gameObject.transform.localPosition.y + offset, 5));
         //line.SetPosition(2, new Vector3(-7.009651f, 3.104148f, 5));
         //line.SetPosition(3, new Vector3(-7.390931f, 3.104148f, 5));
     }
