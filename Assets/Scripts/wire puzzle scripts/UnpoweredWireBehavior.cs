@@ -17,7 +17,6 @@ public class UnpoweredWireBehavior : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Your message here");
         if (collision.GetComponent<PoweredWireStats>())
         {
             PoweredWireStats poweredWireS = collision.GetComponent<PoweredWireStats>();
