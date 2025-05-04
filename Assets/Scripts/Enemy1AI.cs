@@ -1,3 +1,4 @@
+// Type 1 AI, the enemy just chases you until you reach the end, player needs to dodge to avoid it 
 using UnityEngine;
 using UnityEngine.AI; // for built in stuff 
 /// <summary>
@@ -6,7 +7,7 @@ using UnityEngine.AI; // for built in stuff
 // enemy type 1 
 
 
-public class EnemyType1AI : MonoBehaviour
+public class Enemy1AI : MonoBehaviour
 {
     public Transform playerTarget;
 
@@ -46,9 +47,9 @@ public class EnemyType1AI : MonoBehaviour
         playerAttack = Physics.CheckSphere(transform.position, attackRange, player1); // player can be attacked or not 
 
 
-        if (!playerSeen && !playerAttack) Patrol();
-        if (!playerSeen && !playerAttack) Chase();
-        //if (playerSeen && playerAttack) Attack();
+        // chase the player 
+        if (!playerSeen) Patrol();
+        if (playerSeen) Chase();
     }
 
 
