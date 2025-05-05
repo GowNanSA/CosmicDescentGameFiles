@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum WireColor { blue, red, green };
 
 public class PoweredWireStats : MonoBehaviour
@@ -9,6 +11,7 @@ public class PoweredWireStats : MonoBehaviour
     public WireColor objectColor;
     public bool connected = false;
     public Vector3 connectedPosition;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

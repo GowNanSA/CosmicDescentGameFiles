@@ -6,6 +6,7 @@ public class Mob1Wander : MonoBehaviour
 {
     public float wanderRadius;
     public float wanderTimer;
+    public bool invincible; // Flag to check if the player is invincible
 
     private Transform target;
     private NavMeshAgent agent;
@@ -38,7 +39,7 @@ public class Mob1Wander : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         // Check if the colliding object is the player
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") && !invincible)
         {
             // Teleport the player to their starting position
             Transform playerTransform = collision.gameObject.transform;
