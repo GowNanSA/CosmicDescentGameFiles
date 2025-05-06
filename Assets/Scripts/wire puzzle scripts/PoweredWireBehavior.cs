@@ -1,12 +1,15 @@
 using System;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.ProBuilder.Shapes;
 
 public class PoweredWireBehavior : MonoBehaviour
 {
     bool mouseDown = false;
-    public PoweredWireStats powerWireS;
+    private PoweredWireStats powerWireS;
     LineRenderer line;
     public float offset;
+    public int position;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -14,11 +17,42 @@ public class PoweredWireBehavior : MonoBehaviour
         powerWireS = gameObject.GetComponent<PoweredWireStats>();
         line = gameObject.GetComponentInParent<LineRenderer>();
 
-        if(powerWireS.objectColor == WireColor.blue)
+        SpriteRenderer sr = GetComponent<SpriteRenderer>();
+
+        UnityEngine.Sprite[] sprites = Resources.LoadAll<UnityEngine.Sprite>("Sprites/wire sprites");
+        UnityEngine.Sprite loadedSprite = null;
+
+        if (powerWireS.objectColor == WireColor.blue)
+        {
+            loadedSprite = sprites.FirstOrDefault(s => s.name == "wire sprites_0");
+            line.material = Resources.Load<Material>("Sprites/blue");
+        }
+        else if (powerWireS.objectColor == WireColor.red)
+        {
+            loadedSprite = sprites.FirstOrDefault(s => s.name == "wire sprites_4");
+            line.material = Resources.Load<Material>("Sprites/red");
+        }
+        else
+        {
+            loadedSprite = sprites.FirstOrDefault(s => s.name == "wire sprites_8");
+            line.material = Resources.Load<Material>("Sprites/green");
+        }
+
+        if (loadedSprite == null)
+        {
+            Debug.LogError("Sprite failed to load. Make sure it's sliced and named correctly!");
+        }
+        else
+        {
+            //Debug.Log("Sprite loaded: " + loadedSprite.name);
+            sr.sprite = loadedSprite;
+        }
+
+        if (position == 1)
         {
             offset = 0.324148f;
         }
-        else if(powerWireS.objectColor == WireColor.red)
+        else if (position == 2)
         {
             offset = -2.4f;
         }
