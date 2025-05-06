@@ -11,6 +11,7 @@ public class Interactable : MonoBehaviour
     public string message;
 
     public bool isDoor;
+    public bool isCaptain;
 
     public UnityEvent onInteraction;
 
@@ -21,13 +22,20 @@ public class Interactable : MonoBehaviour
 
     public void Interact() {
         //load the wire puzzle
-        if(!isDoor) {
+        if(!isDoor && !isCaptain) {
             MinigameEnd.isCollected[id] = true; 
             SceneManager.LoadScene("WirePuzzle");
-        } else {
+        } else if(isDoor) {
             if(MinigameEnd.minigamesLeft <= 0) {
                 Destroy(this.gameObject);
             }
+        } else if(isCaptain) {
+            MinigameEnd.minigamesLeft = 3;
+            MinigameEnd.isCollected = new bool [] {false, false, false};
+            //unlock cursor
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Application.Quit();
         }
         
     }
