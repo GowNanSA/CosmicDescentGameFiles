@@ -629,12 +629,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
+  m_CollectObjects: 1
+  m_Size: {x: 9.281681, y: 10, z: 9.769497}
+  m_Center: {x: 0.43710518, y: 2, z: 0.11525154}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 63
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -645,7 +645,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: e2128d7935d796e449c3d09c2c804c0f, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &194555997
 Transform:
@@ -2904,12 +2904,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_SerializedVersion: 0
   m_AgentTypeID: 0
-  m_CollectObjects: 0
+  m_CollectObjects: 1
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: 2, z: 0}
   m_LayerMask:
     serializedVersion: 2
-    m_Bits: 55
+    m_Bits: 63
   m_UseGeometry: 0
   m_DefaultArea: 0
   m_GenerateLinks: 0
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.083333336
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: a3b6cc764a015384ca5a9bb48585ea06, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 006235a10abf48b43b2a27bc3d16ef3d, type: 2}
   m_BuildHeightMesh: 0
 --- !u!4 &1011184361
 Transform:
@@ -2931,7 +2931,7 @@ Transform:
   m_GameObject: {fileID: 1011184359}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.21, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3337,6 +3337,7 @@ MonoBehaviour:
   sightRange: 10
   playerCamera: {fileID: 0}
   playerRespawnPoint: {fileID: 1144946750}
+  surface: {fileID: 194555996}
 --- !u!114 &1136907547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3359,6 +3360,7 @@ MonoBehaviour:
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
+  surface: {fileID: 0}
   sightRange: 10
   playerRespawnPoint: {fileID: 1144946750}
 --- !u!195 &1136907549
@@ -3667,6 +3669,7 @@ MonoBehaviour:
     m_Bits: 64
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 0
+  surface: {fileID: 1011184360}
   sightRange: 10
   playerRespawnPoint: {fileID: 1144946750}
 --- !u!114 &1148243737
@@ -3694,6 +3697,7 @@ MonoBehaviour:
   sightRange: 10
   playerCamera: {fileID: 0}
   playerRespawnPoint: {fileID: 1144946750}
+  surface: {fileID: 0}
 --- !u!114 &1148243738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5087,6 +5091,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floor
       objectReference: {fileID: 0}
+    - target: {fileID: 3567035069291421477, guid: 34389acde197959439ecee03afbe4cb0, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567035069291421477, guid: 34389acde197959439ecee03afbe4cb0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4373845032808130999, guid: 34389acde197959439ecee03afbe4cb0, type: 3}
       propertyPath: m_LocalScale.x
       value: 7.94
@@ -5134,6 +5146,10 @@ PrefabInstance:
     - target: {fileID: 4373845032808130999, guid: 34389acde197959439ecee03afbe4cb0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8470000694006175234, guid: 34389acde197959439ecee03afbe4cb0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

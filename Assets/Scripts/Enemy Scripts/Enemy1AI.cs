@@ -1,4 +1,6 @@
 // Type 1 AI, the enemy just chases you until you reach the end, player needs to dodge to avoid it 
+using System.Drawing;
+using Unity.AI.Navigation;
 using UnityEngine;
 using UnityEngine.AI; // for built in stuff 
 /// <summary>
@@ -19,6 +21,8 @@ public class EnemyType1AI : MonoBehaviour
     public Vector3 walkPoint;
     bool walkPointSet;
     public float walkPointRange;
+
+    public NavMeshSurface surface;
 
 
     // state machine reference
@@ -61,22 +65,74 @@ public class EnemyType1AI : MonoBehaviour
         if (walkPointSet)
             agent.SetDestination(walkPoint);
 
-        Vector3 distanceToWalkPoint = transform.position - walkPoint;
+        Vector3 distanceToWalkPoint = new Vector3(transform.position.x - walkPoint.x, 0f, transform.position.z - walkPoint.z);
+        //Debug.Log(distanceToWalkPoint);
 
-        if (distanceToWalkPoint.magnitude < 1f)
+        if (distanceToWalkPoint.magnitude < .5f)
+        {
+            //Debug.Log("reached");
             walkPointSet = false;
+        }
     }
 
     void SearchWalkPoint()
     {
-        float randomRangeZ = Random.Range(-walkPointRange, walkPointRange);
-        float randomRangeX = Random.Range(-walkPointRange, walkPointRange);
+        //Debug.Log("searching for walk point");
+        //float randomRangeZ = Random.Range(-walkPointRange, walkPointRange);
+        //float randomRangeX = Random.Range(-walkPointRange, walkPointRange);
 
-        walkPoint = new Vector3(transform.position.x + randomRangeX, transform.position.y, transform.position.z + randomRangeZ);
+        //walkPoint = new Vector3(transform.position.x + randomRangeX, transform.position.y, transform.position.z + randomRangeZ);
+
+        // Get a random point within the bounds of the NavMesh surface
+        Vector3 randomPoint = GetRandomPointOnNavMesh();
+        //Debug.Log(randomPoint);
+
+        // Check if the generated point is valid
+        if (randomPoint != Vector3.zero)
+        {
+            walkPoint = randomPoint;
+            walkPointSet = true;
+        }
 
         // this is a raycast to check if this is on the ground from the tutorial I watched
-        if (Physics.Raycast(walkPoint, -transform.up, 2f, ground1))
-            walkPointSet = true;
+        //if (Physics.Raycast(walkPoint, -transform.up, 2f, ground1))
+        //    walkPointSet = true;
+    }
+
+    Vector3 GetRandomPointOnNavMesh()
+    {
+        // Get the bounds of the NavMeshSurface in local space
+        Bounds navMeshBounds = surface.navMeshData.sourceBounds;
+
+        // Convert the bounds to world space by applying the NavMeshSurface's transform
+        Vector3 navMeshCenterInWorld = surface.transform.position;
+        Quaternion navMeshRotationInWorld = surface.transform.rotation;
+        Vector3 navMeshScaleInWorld = surface.transform.lossyScale;
+
+        // Apply the transform to the bounds corners to get the bounds in world space
+        Vector3 min = surface.transform.TransformPoint(navMeshBounds.min);
+        Vector3 max = surface.transform.TransformPoint(navMeshBounds.max);
+
+        // Generate a random point within the NavMesh bounds (world space)
+        Vector3 randomPoint = new Vector3(
+            Random.Range(min.x, max.x),
+            surface.transform.position.y, // Temporarily set Y to 0, will correct below
+            Random.Range(min.z, max.z)
+        );
+
+        return randomPoint;
+
+
+        // Check if the generated point is on the NavMesh
+        //NavMeshHit hit;
+        //if (NavMesh.SamplePosition(randomPoint, out hit, 1.0f, NavMesh.AllAreas))
+        //{
+        //    // Return the valid NavMesh point
+        //    return hit.position;
+        //}
+
+        // If not valid, return Vector3.zero, which will make the agent search for a new point
+        //return Vector3.zero;
     }
 
     // chase and attack 
