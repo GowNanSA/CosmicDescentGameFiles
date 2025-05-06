@@ -1,5 +1,4 @@
 // Type 2 AI, the enemy chases player BUT stops and waits if the player is looking at the enemy. 
-using UnityEditor.XR;
 using System.Collections; 
 using UnityEngine;
 using UnityEngine.AI; // for built in stuff 
