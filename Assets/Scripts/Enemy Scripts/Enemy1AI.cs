@@ -7,7 +7,7 @@ using UnityEngine.AI; // for built in stuff
 // enemy type 1 
 
 
-public class Enemy1AI : MonoBehaviour
+public class EnemyType1AI : MonoBehaviour
 {
     public Transform playerTarget;
 
@@ -20,13 +20,10 @@ public class Enemy1AI : MonoBehaviour
     bool walkPointSet;
     public float walkPointRange;
 
-    // to allow enemy to attack should deplete health like... every 3 seconds of touch or smth 
-    public float timeBeforeAttack;
-
-
 
     // state machine reference
-    public float sightRange, attackRange; // player in sight 
+    public float sightRange = 10f;
+        //attackRange; // player in sight s = 10f
     bool playerSeen, playerAttack; // bools to check if player is in range or in sight
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,7 +41,7 @@ public class Enemy1AI : MonoBehaviour
         // check if the player is in sight or range 
         // check if in sight or attack possible
         playerSeen = Physics.CheckSphere(transform.position, sightRange, player1); // player is seen or not 
-        playerAttack = Physics.CheckSphere(transform.position, attackRange, player1); // player can be attacked or not 
+        //playerAttack = Physics.CheckSphere(transform.position, attackRange, player1); // player can be attacked or not 
 
 
         // chase the player 
@@ -88,6 +85,20 @@ public class Enemy1AI : MonoBehaviour
 
         transform.LookAt(playerTarget);
     }
+
+
+    // mob touches player and sends back to start point 
+    void OnCollisionEnter(Collision collision)
+    {
+        // Check if the colliding object is the player
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            // Teleport the player to their starting position
+            Transform playerTransform = collision.gameObject.transform;
+            collision.gameObject.transform.position = Vector3.zero;
+        }
+    }
+
 
 }
 // will likely kill the player, lead to game over, or restart level when touched 
