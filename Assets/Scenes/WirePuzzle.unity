@@ -129,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 25226855}
   - component: {fileID: 25226856}
+  - component: {fileID: 25226857}
   m_Layer: 0
   m_Name: WireLengthRed
   m_TagString: Untagged
@@ -206,6 +207,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &25226857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25226854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2185aa05053289446b30dd5b5f0554c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &128216454
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,6 +229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 128216455}
   - component: {fileID: 128216456}
+  - component: {fileID: 128216457}
   m_Layer: 0
   m_Name: WireLengthGreen
   m_TagString: Untagged
@@ -293,6 +307,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &128216457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128216454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a115754db30a44b3c26514643d24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &129432686
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +416,7 @@ GameObject:
   m_Component:
   - component: {fileID: 207421307}
   - component: {fileID: 207421308}
+  - component: {fileID: 207421309}
   m_Layer: 0
   m_Name: WireLengthRed
   m_TagString: Untagged
@@ -467,6 +494,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &207421309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 207421306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a115754db30a44b3c26514643d24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &233015918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 233015920}
+  - component: {fileID: 233015919}
+  m_Layer: 0
+  m_Name: ColorTracker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &233015919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233015918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c5c4aa2d24b3664fa69e4b5395667e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &233015920
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233015918}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.21147135, y: 0.07039161, z: 2.3080337}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &289245242
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,6 +739,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443878465}
   - component: {fileID: 443878466}
+  - component: {fileID: 443878467}
   m_Layer: 0
   m_Name: WireLengthGreen
   m_TagString: Untagged
@@ -733,6 +817,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &443878467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443878464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2185aa05053289446b30dd5b5f0554c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &470335498
 GameObject:
   m_ObjectHideFlags: 0
@@ -917,6 +1013,7 @@ MonoBehaviour:
   objectColor: 1
   onLight: {fileID: 129432686}
   offLight: {fileID: 2044729224}
+  colors: {fileID: 233015919}
 --- !u!114 &596426575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1383,9 +1480,10 @@ MonoBehaviour:
   movable: 0
   moving: 0
   startPosition: {x: 0, y: 0, z: 0}
-  objectColor: 1
   connected: 0
   connectedPosition: {x: 0, y: 0, z: 0}
+  colors: {fileID: 233015919}
+  objectColor: 1
 --- !u!114 &1194360829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1398,8 +1496,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e0597ec0cd38441b83a96e1f97ff37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerWireS: {fileID: 1194360828}
   offset: 0
+  position: 2
 --- !u!61 &1194360830
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1538,6 +1636,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1215043538}
   - component: {fileID: 1215043539}
+  - component: {fileID: 1215043540}
   m_Layer: 0
   m_Name: WireLengthBlue
   m_TagString: Untagged
@@ -1615,6 +1714,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1215043540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1215043537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2185aa05053289446b30dd5b5f0554c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1254636503
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,9 +1777,10 @@ MonoBehaviour:
   movable: 0
   moving: 0
   startPosition: {x: 0, y: 0, z: 0}
-  objectColor: 2
   connected: 0
   connectedPosition: {x: 0, y: 0, z: 0}
+  colors: {fileID: 233015919}
+  objectColor: 2
 --- !u!114 &1254636506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1681,8 +1793,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e0597ec0cd38441b83a96e1f97ff37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerWireS: {fileID: 1254636505}
   offset: 0
+  position: 3
 --- !u!61 &1254636507
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2017,7 +2129,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0a07810e4ee1ef4a97b33ea29487608, type: 3}
+  m_Sprite: {fileID: 21300000, guid: af4fc3b9e35b2764c95780613e6b10db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2037,8 +2149,8 @@ Transform:
   m_GameObject: {fileID: 1347587559}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.1049, z: 10}
-  m_LocalScale: {x: 5.1520076, y: 5.521149, z: 1}
+  m_LocalPosition: {x: 0.0527, y: -0.0476, z: 10}
+  m_LocalScale: {x: 0.72443634, y: 0.9196246, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2559,6 +2671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1843798474}
   - component: {fileID: 1843798475}
+  - component: {fileID: 1843798476}
   m_Layer: 0
   m_Name: WireLengthBlue
   m_TagString: Untagged
@@ -2636,6 +2749,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1843798476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1843798473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79a115754db30a44b3c26514643d24f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1912917283
 GameObject:
   m_ObjectHideFlags: 0
@@ -2742,6 +2867,7 @@ MonoBehaviour:
   objectColor: 0
   onLight: {fileID: 1476380892}
   offLight: {fileID: 877814189}
+  colors: {fileID: 233015919}
 --- !u!114 &1912917287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3019,6 +3145,7 @@ MonoBehaviour:
   objectColor: 2
   onLight: {fileID: 928330931}
   offLight: {fileID: 470335498}
+  colors: {fileID: 233015919}
 --- !u!114 &2057652500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3262,12 +3389,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38134f7f9bed47547b9dbce11b7ada6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movable: 0
+  movable: 1
   moving: 0
   startPosition: {x: 0, y: 0, z: 0}
-  objectColor: 0
   connected: 0
   connectedPosition: {x: 0, y: 0, z: 0}
+  colors: {fileID: 233015919}
+  objectColor: 0
 --- !u!114 &2069398656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3280,8 +3408,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e0597ec0cd38441b83a96e1f97ff37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  powerWireS: {fileID: 2069398655}
   offset: 0
+  position: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3294,3 +3422,4 @@ SceneRoots:
   - {fileID: 1468993045}
   - {fileID: 289245243}
   - {fileID: 1682643549}
+  - {fileID: 233015920}
