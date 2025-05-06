@@ -1393,6 +1393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 713103438}
   - component: {fileID: 713103439}
+  - component: {fileID: 713103440}
   m_Layer: 8
   m_Name: MinimapIcon
   m_TagString: Untagged
@@ -1408,8 +1409,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 713103437}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.076, y: 5.97, z: 0.049}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.07600021, y: 5.97, z: 0.048999786}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1459,8 +1460,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d5f717521f51a4046a44afdd470c06eb, type: 3}
-  m_Color: {r: 0.3388933, g: 1, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 624a788250463c1418ce35e6cb440052, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1470,6 +1471,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &713103440
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 713103437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37662fe10066c354c9b648382e977b4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerCamera: {fileID: 330585546}
 --- !u!1001 &738428781
 PrefabInstance:
   m_ObjectHideFlags: 0
