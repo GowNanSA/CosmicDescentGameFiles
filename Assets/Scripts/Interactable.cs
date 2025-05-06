@@ -35,7 +35,8 @@ public class Interactable : MonoBehaviour
             //unlock cursor
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
-            Application.Quit();
+            SceneManager.LoadScene("TitleScreen");
+            //Application.Quit();
         }
         
     }
