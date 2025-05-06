@@ -4,13 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class Interactable : MonoBehaviour
+public class DoorAccess : MonoBehaviour
 {
     Outline outline;
-    public int id = 0;
-    public string message;
-
-    public bool isDoor;
+    public GameObject door;
 
     public UnityEvent onInteraction;
 
@@ -20,14 +17,11 @@ public class Interactable : MonoBehaviour
     }
 
     public void Interact() {
-        //load the wire puzzle
-        if(!isDoor) {
-            MinigameEnd.isCollected[id] = true; 
-            SceneManager.LoadScene("WirePuzzle");
+        if (MinigameEnd.minigamesLeft <= 0) {
+            Destroy(door);
+            onInteraction.Invoke();
         } else {
-            if(MinigameEnd.minigamesLeft <= 0) {
-                Destroy(this.gameObject);
-            }
+            Debug.Log("You need to complete all minigames first!");
         }
         
     }

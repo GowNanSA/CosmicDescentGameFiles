@@ -26,6 +26,8 @@ public class EnemyType1AI : MonoBehaviour
         //attackRange; // player in sight s = 10f
     bool playerSeen, playerAttack; // bools to check if player is in range or in sight
 
+    public Transform playerRespawnPoint; 
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -94,7 +96,7 @@ public class EnemyType1AI : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // Teleport the player to their starting position
-            Transform playerTransform = collision.gameObject.transform;
+            Transform playerTransform = playerRespawnPoint.transform;
             collision.gameObject.transform.position = Vector3.zero;
         }
     }
